@@ -176,6 +176,10 @@ body {
 
 }
 
+.hero {
+    overflow-x: hidden;
+}
+
 .page-header {
     padding-block: var(--spacing-400);
 }
@@ -232,17 +236,16 @@ body {
 .hero .wrapper {
     display: grid;
     gap: var(--spacing-200);
-    max-width: 35rem;
 }
 
+.hero__images {
+    display: flex;
+    justify-content: center;
+}
 
-.hero::before {
-    content: '';
-    display: block;
-    width: 100%;
-    aspect-ratio: 375 / 151;
-    background: url('assets/tablet/image-hero.png') no-repeat center / contain;
-    z-index: -1;
+.hero__content {
+    max-width: 35ch;
+    margin-inline: auto;
 }
 
 .gallery .wrapper {
@@ -342,17 +345,7 @@ body {
 }
 
 @media (min-width: 1025px) {
-    .hero::before {
-        display: none;
-    }
 
-    .hero {
-        background: url(assets/desktop/image-hero-left.png), url(assets/desktop/image-hero-right.png);
-        background-position: center left, center right;
-        background-position: calc(50% - 580px) center, calc(50% + 580px) center;
-        background-repeat: no-repeat;
-        padding-block: var(--spacing-900);
-    }
 
     .footer-cta {
         background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/desktop/image-footer.jpg);
@@ -366,7 +359,6 @@ body {
         padding-inline: 2rem;
         max-width: 1440px;
         text-align: left;
-        gap: 0px;
     }
 
     .button--tertiary {
