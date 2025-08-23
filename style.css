@@ -185,7 +185,7 @@ body {
 }
 
 .hero__heading {
-    font-size: var(--text-preset-2-font-size);
+    font-size: clamp(1.875rem, 1.125rem + 3.2vw, var(--text-preset-1-font-size));
     line-height: var(--text-preset-2-line-height);
     font-weight: var(--font-weight-display-black);
 }
@@ -211,7 +211,10 @@ body {
 
 .button--primary {
     background-color: var(--color-cyan-600);
+}
 
+.button--primary:hover {
+    background-color: #71C0D4;
 }
 
 .button__version {
@@ -220,6 +223,10 @@ body {
 
 .button--secondary {
     background-color: var(--color-purple-600);
+}
+
+.button--secondary:hover {
+    background-color: #B18BDD;
 }
 
 .hero .wrapper {
@@ -315,6 +322,10 @@ body {
     justify-self: center;
 }
 
+.button--tertiary:hover {
+    background-color: #B18BDD;
+}
+
 .button--tertiary .button__version {
     color: var(--color-purple-300);
 }
@@ -330,7 +341,7 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .hero::before {
         display: none;
     }
@@ -338,7 +349,27 @@ body {
     .hero {
         background: url(assets/desktop/image-hero-left.png), url(assets/desktop/image-hero-right.png);
         background-position: center left, center right;
+        background-position: calc(50% - 580px) center, calc(50% + 580px) center;
         background-repeat: no-repeat;
         padding-block: var(--spacing-900);
+    }
+
+    .footer-cta {
+        background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/desktop/image-footer.jpg);
+        background-position: center;
+    }
+
+    .footer-cta .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+
+        align-items: center;
+        padding-inline: 2rem;
+        max-width: 1440px;
+        text-align: left;
+        gap: 0px;
+    }
+
+    .button--tertiary {
+        justify-self: end;
     }
 }
