@@ -1,0 +1,344 @@
+/*
+  A modern CSS reset.
+  Removes default browser styles and sets some sensible defaults.
+*/
+
+/* 1. Use a more intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin and padding. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 3. Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* 4. Set core body defaults. */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* 5. Make images and other media easier to work with. */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* 6. Inherit fonts for inputs and buttons. */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Make anchors behave like normal text. */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+:root {
+    /* Cyan */
+    --color-cyan-600: rgb(77, 150, 169);
+    --color-cyan-300: #8FE3F9;
+
+    /* Purple */
+    --color-purple-600: #855FB1;
+    --color-purple-300: #D9B8FF;
+
+    /* Slate */
+    --color-slate-900: #28283D;
+    --color-slate-600: #87879D;
+    --color-slate-300: #D1D1DF;
+
+    /* White */
+    --color-white: #fafafa;
+
+    /* Font Family and Weights */
+    --font-family-display: 'Red Hat Display', sans-serif;
+    --font-weight-display-black: 900;
+    /* Also 'Black' */
+    --font-weight-display-medium: 500;
+    /* Also 'Medium' */
+
+    /* Text Preset 1: 64px / 110% / 4px */
+    --text-preset-1-font-size: 64px;
+    --text-preset-1-line-height: 1.1;
+    /* 110% as unitless value */
+    --text-preset-1-letter-spacing: 4px;
+
+    /* Text Preset 2: 40px / 110% / 0px */
+    --text-preset-2-font-size: 40px;
+    --text-preset-2-line-height: 1.1;
+    --text-preset-2-letter-spacing: 0px;
+
+    /* Text Preset 3: 16px / 110% / 4px */
+    --text-preset-3-font-size: 16px;
+    --text-preset-3-line-height: 1.1;
+    --text-preset-3-letter-spacing: 4px;
+
+    /* Text Preset 4: 18px / 110% / 0px */
+    --text-preset-4-font-size: 18px;
+    --text-preset-4-line-height: 1.1;
+    --text-preset-4-letter-spacing: 0px;
+
+    /* Text Preset 5: 16px / 150% / 0px */
+    --text-preset-5-font-size: 16px;
+    --text-preset-5-line-height: 1.5;
+    /* 150% as unitless value */
+    --text-preset-5-letter-spacing: 0px;
+
+    /* Spacing Scale */
+    --spacing-1400: 112px;
+    --spacing-1000: 80px;
+    --spacing-900: 72px;
+    --spacing-800: 64px;
+    --spacing-700: 56px;
+    --spacing-500: 40px;
+    --spacing-400: 32px;
+    --spacing-300: 24px;
+    --spacing-200: 16px;
+    --spacing-100: 8px;
+    --spacing-50: 4px;
+}
+
+.wrapper {
+    margin-top: var(--spacing-500);
+    max-width: 1440px;
+    padding-inline: var(--spacing-500);
+    margin-inline: auto;
+}
+
+.section-divider {
+    margin-block-start: 10rem;
+    position: relative;
+    font-weight: var(--font-weight-display-black);
+    color: var(--color-slate-600);
+}
+
+.section-divider::before {
+    content: "";
+    background-color: var(--color-slate-300);
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100px;
+}
+
+.section-divider__number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-slate-300);
+    border-radius: 50%;
+    place-content: center;
+}
+
+
+body {
+    font-family: var(--font-family-display);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.page-header {
+    padding-block: var(--spacing-400);
+}
+
+.page-header img {
+    margin-inline: auto;
+}
+
+.hero__heading {
+    font-size: var(--text-preset-2-font-size);
+    line-height: var(--text-preset-2-line-height);
+    font-weight: var(--font-weight-display-black);
+}
+
+.hero__text {
+    color: var(--color-slate-600);
+}
+
+.hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    align-items: center;
+}
+
+.button {
+    padding: var(--spacing-200) var(--spacing-500);
+    border-radius: var(--spacing-400);
+    color: var(--color-white);
+    font-size: var(--text-preset-5-font-size);
+    font-weight: var(--font-weight-display-black);
+}
+
+.button--primary {
+    background-color: var(--color-cyan-600);
+
+}
+
+.button__version {
+    color: var(--color-cyan-300);
+}
+
+.button--secondary {
+    background-color: var(--color-purple-600);
+}
+
+.hero .wrapper {
+    display: grid;
+    gap: var(--spacing-200);
+    max-width: 35rem;
+}
+
+
+.hero::before {
+    content: '';
+    display: block;
+    width: 100%;
+    aspect-ratio: 375 / 151;
+    background: url('assets/tablet/image-hero.png') no-repeat center / contain;
+    z-index: -1;
+}
+
+.gallery .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-200);
+}
+
+.gallery__image {
+    border-radius: var(--spacing-100);
+}
+
+.features .wrapper {
+    display: grid;
+    gap: var(--spacing-200);
+    line-height: var(--text-preset-1-line-height);
+    max-width: 35rem;
+}
+
+.features__eyebrow {
+    color: var(--color-cyan-600);
+    font-weight: var(--font-weight-display-black);
+    letter-spacing: var(--text-preset-3-letter-spacing);
+    text-transform: uppercase;
+}
+
+.features__heading {
+    font-weight: var(--font-weight-display-black);
+    font-size: var(--text-preset-2-font-size);
+}
+
+.features__text {
+    color: var(--color-slate-600);
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--font-weight-display-medium);
+    line-height: var(--text-preset-5-line-height);
+}
+
+.footer-cta {
+    background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/mobile/image-footer.jpg);
+    background-size: cover;
+    padding-block: var(--spacing-1400);
+    margin-top: 0;
+    color: var(--color-white);
+    place-content: center;
+}
+
+.footer-cta .wrapper {
+    display: grid;
+    place-content: center;
+    gap: var(--spacing-300);
+    margin-top: 0;
+    max-width: 45rem;
+}
+
+.section-divider--footer-overlap {
+    margin-bottom: -25px;
+    z-index: 1;
+}
+
+.section-divider--footer-overlap .section-divider__number {
+    background-color: var(--color-white);
+}
+
+.footer-cta__heading {
+    font-size: var(--text-preset-2-font-size);
+    font-weight: var(--font-weight-display-black);
+    line-height: var(--text-preset-2-line-height)
+}
+
+.footer-cta__text {
+    font-size: var(--text-preset-4-font-size);
+}
+
+.button--tertiary {
+    background-color: var(--color-purple-600);
+    justify-self: center;
+}
+
+.button--tertiary .button__version {
+    color: var(--color-purple-300);
+}
+
+@media (min-width: 768px) {
+    .footer-cta {
+        background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/tablet/image-footer.jpg);
+    }
+
+    .hero__actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero::before {
+        display: none;
+    }
+
+    .hero {
+        background: url(assets/desktop/image-hero-left.png), url(assets/desktop/image-hero-right.png);
+        background-position: center left, center right;
+        background-repeat: no-repeat;
+        padding-block: var(--spacing-900);
+    }
+}
