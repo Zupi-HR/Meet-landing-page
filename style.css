@@ -191,20 +191,20 @@ body {
 .hero .wrapper {
     display: grid;
     gap: var(--spacing-400);
+    align-items: center;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "images images"
+    grid-template-areas: "image-left image-right"
         "content content"
         "actions actions"
     ;
 }
 
-.hero__images {
-    grid-area: images;
-    display: flex;
+.hero__image-wrapper .left {
+    grid-area: image-left;
 }
 
-.hero__image-wrapper {
-    flex: 1
+.hero__image-wrapper .right {
+    grid-area: image-right;
 }
 
 .hero__image {
@@ -367,7 +367,12 @@ body {
 }
 
 @media (min-width: 1025px) {
-
+    .hero .wrapper {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "left content right"
+            "left actions right"
+        ;
+    }
 
     .footer-cta {
         background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/desktop/image-footer.jpg);
