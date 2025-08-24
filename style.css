@@ -368,10 +368,11 @@ body {
 
 @media (min-width: 1025px) {
     .hero .wrapper {
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr max-content 1fr;
         grid-template-areas: "left content right"
             "left actions right"
         ;
+        column-gap: var(--spacing-700);
     }
 
     .footer-cta {
