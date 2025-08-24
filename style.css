@@ -375,6 +375,10 @@ body {
         column-gap: var(--spacing-700);
     }
 
+    .hero__content {
+        max-width: 45ch;
+    }
+
     .footer-cta {
         background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url(./assets/desktop/image-footer.jpg);
         background-position: center;
